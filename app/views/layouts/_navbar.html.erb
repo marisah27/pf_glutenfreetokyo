@@ -7,9 +7,15 @@
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
-        <li class="nav-item"><%= link_to 'About', about_path, class: 'nav-link' %></li>
-        <li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
-        <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
+        <% if logged_in? %>
+          <li class="nav-item"><%= link_to 'About', about_path, class: 'nav-link' %></li>
+          <li class="nav-item">お店の投稿</li>
+          <li class="nav-item"><%= link_to 'Logout', logout_path, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'nav-link' %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to 'About', about_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>
+        <% end %>
       </ul>
     </div>
   </nav>
