@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   resources :users, only: [:new, :create]
+  
+  get 'about', to: 'abouts#index'
+  
 end
