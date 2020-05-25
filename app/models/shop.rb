@@ -1,6 +1,10 @@
 class Shop < ApplicationRecord
   belongs_to :user
   
+  validates :name, presence: true, length: { maximum: 50 }
+  validates :address, length: { maximum: 100 }
+  validates :review, presence: true, length: { maximum: 300 }
+  
   enum area: {
     ginza: 0,
     sinbashi: 1,
