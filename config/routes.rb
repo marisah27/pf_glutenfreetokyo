@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   
   get 'about', to: 'abouts#index'
   
+  resources :shops
+  
 end
