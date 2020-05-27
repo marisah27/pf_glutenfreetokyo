@@ -1,0 +1,19 @@
+<ul class="list-unstyled">
+  <% @shops.each do |shop| %>
+    <h2 class="mt-0"><%= shop.name %></h2>
+    <li class="media mb-3">
+     <img class=>
+       <div class="media-body">
+         <div>
+           お店の住所：<%= shop.address %>
+         </div>
+         <div>
+           おすすめのグルテンフリーメニュー
+         </div>
+      <p><%= shop.genre %></p>
+    </div>
+  </li>
+  <% end %>
+  <%= paginate @shops %>
+</ul>
+        

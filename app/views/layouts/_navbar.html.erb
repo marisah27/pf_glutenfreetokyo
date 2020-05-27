@@ -9,8 +9,8 @@
       <ul class="navbar-nav">
         <% if logged_in? %>
           <li class="nav-item"><%= link_to 'About', about_path, class: 'nav-link' %></li>
-          <li class="nav-item">お店の投稿</li>
-          <li class="nav-item"><%= link_to 'Logout', logout_path, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'お店の新規投稿', new_shop_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Logout', logout_path, method: :delete, data: { confirm: '本当にログアウトしてよろしいですか？' }, class: 'nav-link' %></li>
         <% else %>
           <li class="nav-item"><%= link_to 'About', about_path, class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
