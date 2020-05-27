@@ -1,5 +1,6 @@
 class Shop < ApplicationRecord
   belongs_to :user
+  mount_uploader :img, ImgUploader
   
   validates :name, presence: true, length: { maximum: 50 }
   validates :address, length: { maximum: 100 }
@@ -21,5 +22,4 @@ class Shop < ApplicationRecord
     meet: 3,
     cafe: 4
   }
-  
 end

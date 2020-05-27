@@ -14,6 +14,7 @@ class ShopsController < ApplicationController
 
   def create
     @shops = current_user.shops.build(shop_params)
+    byebug
     if @shops.save
       flash[:success] = 'お店情報を投稿しました。'
       redirect_to root_url

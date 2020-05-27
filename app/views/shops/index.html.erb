@@ -2,7 +2,9 @@
   <% @shops.each do |shop| %>
     <h2 class="mt-0"><%= shop.name %></h2>
     <li class="media mb-3">
-     <img class=>
+    <strong>Image:</strong>
+    <p><%= image_tag shop.img.url  if shop.img?%></p>
+    
        <div class="media-body">
          <div>
            お店の住所：<%= shop.address %>
