@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   
   resources :shops
   
+  resources :menus, only: [:create, :destroy, :edit]
+  
 end
