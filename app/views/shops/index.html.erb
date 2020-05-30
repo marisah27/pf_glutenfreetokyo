@@ -1,10 +1,11 @@
-<ul class="list-unstyled">
+  <ul class="list-unstyled">
   <% @shops.each do |shop| %>
-    <h2 class="mt-0"><%= shop.name %></h2>
+  <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #99CCCC; border-radius: 10px;">
+  <h2 class="mt-0"><%= shop.name %></h2>
     <li class="media mb-3">
-    <strong>Image:</strong>
-    <p><%= image_tag shop.img.url  if shop.img?%></p>
-    
+        <p style="margin-right: 50px; margin-left: 30px">
+        <%= image_tag shop.img.url,:size =>'230x230' if shop.img?%>
+        </p>
        <div class="media-body">
          <div>
            お店の住所：<%= shop.address %>
@@ -15,7 +16,7 @@
       <p><%= shop.genre %></p>
     </div>
   </li>
+  </div>
   <% end %>
   <%= paginate @shops %>
 </ul>
-        

@@ -1,5 +1,6 @@
 class Shop < ApplicationRecord
   belongs_to :user
+  has_many :menus
   mount_uploader :img, ImgUploader
   
   validates :name, presence: true, length: { maximum: 50 }
