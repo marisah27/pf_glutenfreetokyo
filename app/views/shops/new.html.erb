@@ -6,7 +6,8 @@
   <div class="col-sm-6 ">
 
     <%= form_with(model: @shop, local: true) do |f| %>
-      
+    <%= render 'layouts/error_messages', model: f.object %>
+    
       <div class="form-group">
         <%= f.label :name, 'お店の名前／Name of restaurant' %>
         <%= f.text_field :name, class: 'form-control' %>
@@ -52,14 +53,29 @@
         <%= f.radio_button :genre, :cafe %>
      </div>
      
-
+      <div class="form-group">
+        グルテンフリーメニュー/金額
+        <%= f.fields_for :menus do |m| %>
+        <div class="row">
+          <div class="col-sm-8">
+            <%= m.text_field :menu, class: 'form-control' %>
+          </div>
+          <div class="col-sm-4">
+            <%= m.text_field :price, class: 'form-control', :value =>"円" %>
+          </div>
+        </div>
+        <% end %>
+     </div>
+        <!--後で追加：複数入力箇所追加・price・img-->
+     
      <div class="form-group">
         <%= f.label :review, '口コミ／review' %>
         <%= f.text_area :review, class: 'form-control', rows: 5 %>
-      </div>
+     </div>
         
+     
       <%= f.submit 'お店登録', class: 'btn btn-secondary btn-block' %>
-    <% end %>
+  <% end %>
     
   </div>
 </div>

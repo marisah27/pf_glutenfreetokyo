@@ -11,7 +11,10 @@
            お店の住所：<%= shop.address %>
          </div>
          <div>
-           おすすめのグルテンフリーメニュー
+           おすすめのグルテンフリーメニューと金額：
+           <% shop.menus.each do |m|%>
+           <%= m.menu %>(<%= m.price %>
+           <% end %>
          </div>
       <p><%= shop.genre %></p>
     </div>

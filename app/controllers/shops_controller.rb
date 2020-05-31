@@ -7,14 +7,16 @@ class ShopsController < ApplicationController
 
   def show
   end
-
+  
   def new
-    @shop = current_user.shops.build
+    byebug
+    @shop = Shop.new
+    3.times { @shop.menus.build }
   end
 
   def create
-    @shops = current_user.shops.build(shop_params)
-    if @shops.save
+    @shop = current_user.shops.build(shop_params)
+    if @shop.save
       flash[:success] = 'お店情報を投稿しました。'
       redirect_to root_url
     else
@@ -37,7 +39,12 @@ class ShopsController < ApplicationController
   
   # Strong Parameter
   def shop_params
-    params.require(:shop).permit(:name, :address, :review, :area, :genre, :img)
+    params.require(:shop).permit(:name, :address, :review, :area, :genre, :img, menus_attributes: [
+      :menu, 
+      :price, 
+      :img,
+      ],
+    )
   end
   
 end
