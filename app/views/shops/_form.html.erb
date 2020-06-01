@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="col-sm-6 ">
+
+    <%= form_with(model: shop, local: true) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+    
+      <div class="form-group">
+        <%= f.label :name, 'お店の名前／Name of restaurant' %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+         <%= f.label :address, 'お店の住所／Where is the address' %>
+         <%= f.text_field :address, class: 'form-control', :placeholder => "東京都"%>
+      </div>
+      
+      <div class="field">
+        <%= f.label :area,'エリア選択／choose area' %> </br>
+        <%= f.label :"銀座" %>
+        <%= f.radio_button :area, :ginza %>
+        <%= f.label :"新橋・汐留" %>
+        <%= f.radio_button :area, :sinbashi %>
+        <%= f.label :"渋谷" %>
+        <%= f.radio_button :area, :shibuya %>
+        <%= f.label :"新宿" %>
+        <%= f.radio_button :area, :shinjuku %>
+        <%= f.label :"池袋" %>
+        <%= f.radio_button :area, :shinjuku %>
+        <%= f.label :"その他" %>
+        <%= f.radio_button :area, :others %>
+     </div>
+     
+     <div class="form-group">
+       <%= f.label :画像 %><br />
+       <%= f.file_field :img, class: "image" %>
+     </div>
+    
+     <div class="field">
+        <%= f.label :genre,'ジャンル選択／choose genre' %> </br>
+        <%= f.label :"イタリアン" %>
+        <%= f.radio_button :genre, :italian %>
+        <%= f.label :"和食" %>
+        <%= f.radio_button :genre, :washoku %>
+        <%= f.label :"エスニック・アジア料理" %>
+        <%= f.radio_button :genre, :ethnic %>
+        <%= f.label :"肉料理" %>
+        <%= f.radio_button :genre, :meet %>
+        <%= f.label :"カフェ" %>
+        <%= f.radio_button :genre, :cafe %>
+     </div>
+     
+      <div class="form-group">
+        グルテンフリーメニュー/金額
+        <%= f.fields_for :menus do |m| %>
+        <div class="row">
+          <div class="col-sm-8">
+            <%= m.text_field :menu, class: 'form-control' %>
+          </div>
+          <div class="col-sm-4">
+            <%= m.text_field :price, class: 'form-control', :value =>"円" %>
+          </div>
+        </div>
+        <% end %>
+     </div>
+        <!--後で追加：複数入力箇所追加・price・img-->
+     
+     <div class="form-group">
+        <%= f.label :review, '口コミ／review' %>
+        <%= f.text_area :review, class: 'form-control', rows: 5 %>
+     </div>
+        
+     
+      <%= f.submit '投稿', class: 'btn btn-secondary btn-block' %>
+  <% end %>
+    
+  </div>
+</div>
