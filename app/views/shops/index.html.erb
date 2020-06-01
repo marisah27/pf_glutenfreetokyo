@@ -1,7 +1,8 @@
-  <ul class="list-unstyled">
+<ul class="list-unstyled">
   <% @shops.each do |shop| %>
   <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #99CCCC; border-radius: 10px;">
-  <h2 class="mt-0"><%= shop.name %></h2>
+    <h2 class="mt-0"><%= link_to shop.name, shop %></h2>
+
     <li class="media mb-3">
         <p style="margin-right: 50px; margin-left: 30px">
         <%= image_tag shop.img.url,:size =>'230x230' if shop.img?%>
@@ -17,9 +18,11 @@
            <% end %>
          </div>
       <p><%= shop.genre %></p>
-    </div>
-  </li>
+      <div style="margin-top: 30px"><%= link_to 'Details', shop %></div>
+      </div>
+    </li>
   </div>
+</ul>
+
   <% end %>
   <%= paginate @shops %>
-</ul>

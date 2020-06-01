@@ -6,10 +6,10 @@ class ShopsController < ApplicationController
   end
 
   def show
+    @shop = Shop.find(params[:id])
   end
   
   def new
-    byebug
     @shop = Shop.new
     3.times { @shop.menus.build }
   end

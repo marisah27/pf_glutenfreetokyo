@@ -1,0 +1,22 @@
+<h1><%= @shop.name %></h1>
+
+<%= image_tag @shop.img.url,:size =>'230x230' if @shop.img?%>
+
+<h4>お店の住所：<%= @shop.address%></h4>
+<h4>お店のエリア：<%= @shop.area%></h4>
+<h4>お店のジャンル：<%= @shop.genre%></h4>
+
+<table class="table table-bordered">
+  <tr>
+    <th>グルテンフリーのメニュー</th>
+    <th>金額</th>
+  </tr>
+  <tr>
+    <% @shop.menus.each do |m|%>
+    <td><%= m.menu %></td>
+    <td><%= m.price %></td>
+  </tr>
+  <% end %>
+</table>
+
+<h4>お店の口コミ：<%= @shop.review%></h4>
