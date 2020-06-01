@@ -1,10 +1,10 @@
-<h1><%= @shop.name %></h1>
+<h2><%= @shop.name %></h2>
 
 <%= image_tag @shop.img.url,:size =>'230x230' if @shop.img?%>
 
-<h4>お店の住所：<%= @shop.address%></h4>
-<h4>お店のエリア：<%= @shop.area%></h4>
-<h4>お店のジャンル：<%= @shop.genre%></h4>
+<p>お店の住所：<%= @shop.address%></p>
+<p>お店のエリア：<%= @shop.area%></p>
+<p>お店のジャンル：<%= @shop.genre%></p>
 
 <table class="table table-bordered">
   <tr>
@@ -19,4 +19,10 @@
   <% end %>
 </table>
 
-<h4>お店の口コミ：<%= @shop.review%></h4>
+
+お店の口コミ：
+<div style="padding: 10px;border: 1px solid #99CCCC; border-radius: 10px;">
+<%= @shop.review%>
+</div
+
+<div style="margin-top: 30px"><%= link_to '一覧に戻る', shops_path %>  <%= link_to 'Edit', edit_shop_path(@shop) %></div>

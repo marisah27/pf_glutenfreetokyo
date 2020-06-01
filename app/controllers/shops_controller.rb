@@ -18,18 +18,28 @@ class ShopsController < ApplicationController
     @shop = current_user.shops.build(shop_params)
     if @shop.save
       flash[:success] = 'お店情報を投稿しました。'
-      redirect_to root_url
+      redirect_to shops_path
     else
       @shops = current_user.shops.order(id: :desc).page(params[:page])
       flash.now[:danger] = 'お店情報の投稿に失敗しました。'
-      render 'toppages/index'
+      render :new
     end
   end
 
   def edit
+    @shop = Shop.find(params[:id])
   end
 
   def update
+    @shop = current_user.shops.find(params[:id])
+    if @shop.update(shop_params)
+      flash[:success] = 'お店情報は正常に更新されました。'
+      redirect_to shop_path
+    else
+      @shops = current_user.shops.order(id: :desc).page(params[:page])
+      flash.now[:danger] = 'お店情報は更新されませんでした。'
+      render :edit
+    end
   end
 
   def destroy
