@@ -1,5 +1,6 @@
 class ShopsController < ApplicationController
   before_action :require_user_logged_in
+  before_action :correct_user, only: [:edit,:destroy]
   
   def index
     @shops = current_user.shops.order(id: :desc).page(params[:page])
@@ -43,6 +44,9 @@ class ShopsController < ApplicationController
   end
 
   def destroy
+    @shop.destroy
+    flash[:success] = '投稿を削除しました。'
+    redirect_to shops_path
   end
 
   private
@@ -55,6 +59,13 @@ class ShopsController < ApplicationController
       :img,
       ],
     )
+  end
+  
+  def correct_user
+    @shop = current_user.shops.find_by(id: params[:id])
+    unless @shop
+      redirect_to root_url
+    end
   end
   
 end

@@ -1,6 +1,6 @@
 class Shop < ApplicationRecord
   belongs_to :user
-  has_many :menus
+  has_many :menus, dependent: :destroy
   accepts_nested_attributes_for :menus
   mount_uploader :img, ImgUploader
   

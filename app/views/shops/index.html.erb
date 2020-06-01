@@ -1,7 +1,7 @@
 <ul class="list-unstyled">
   <% @shops.each do |shop| %>
   <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #99CCCC; border-radius: 10px;">
-    <h2 class="mt-0"><%= link_to shop.name, shop %></h2>
+    <h2 class="mt-0"><%= link_to shop.name, shop%></h2>
 
     <li class="media mb-3">
         <p style="margin-right: 50px; margin-left: 30px">
@@ -12,14 +12,14 @@
            お店の住所：<%= shop.address %>
          </div>
          <div>
-           おすすめのグルテンフリーメニューと金額：
-           <% shop.menus.each do |m|%>
-           <%= m.menu %>(<%= m.price %>
-           <% end %>
+           口コミ情報：<%= shop.review%>
          </div>
-      <p><%= shop.genre %></p>
-      <div style="margin-top: 30px"><%= link_to 'Details', shop %>  <%= link_to 'Edit', edit_shop_path(shop) %></div>
+      <p>お店のジャンル：<%= shop.genre %></p>
+      <div style="margin-top: 30px; margin-bottom: 5px;">
+        <%= link_to 'メニューなどお店情報詳細はこちら', shop ,class: 'btn btn-info'%>
+        <%= link_to '編集', edit_shop_path(shop),class: 'btn btn-secondary' %>
       </div>
+      
     </li>
   </div>
 </ul>

@@ -3,3 +3,8 @@
 </div>
 
 <%= render 'form', shop: @shop %>
+
+<div style="margin-top: 5px; margin-bottom: 5px;">
+  <%= link_to 'お店情報に戻る', @shop ,class: 'btn btn-info'%>
+  <%= link_to '削除', @shop, method: :delete, data: { confirm: '本当に削除してよろしいですか？' },class: 'btn btn-secondary' %>
+</div>

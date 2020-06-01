@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   
   get 'about', to: 'abouts#index'
-  
   resources :shops
   
   resources :menus, only: [:create, :destroy, :edit]

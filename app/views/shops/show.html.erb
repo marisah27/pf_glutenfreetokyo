@@ -22,7 +22,12 @@
 
 お店の口コミ：
 <div style="padding: 10px;border: 1px solid #99CCCC; border-radius: 10px;">
-<%= @shop.review%>
+  <%= @shop.review%>
 </div
 
-<div style="margin-top: 30px"><%= link_to '一覧に戻る', shops_path %>  <%= link_to 'Edit', edit_shop_path(@shop) %></div>
+<div style="margin-top: 30px">
+  <%= link_to '一覧に戻る', shops_path,class: 'btn btn-secondary' %>  
+  <%= link_to '編集', edit_shop_path(@shop),class: 'btn btn-secondary'%>
+  <%= link_to '削除', @shop, method: :delete, data: { confirm: '本当に削除してよろしいですか？' },class: 'btn btn-secondary' %>
+</div>
+
