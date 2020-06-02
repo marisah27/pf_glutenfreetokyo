@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_secure_password
   
   has_many :shops
+  accepts_nested_attributes_for :shops
 end 

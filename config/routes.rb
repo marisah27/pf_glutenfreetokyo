@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   
   get 'about', to: 'abouts#index'
+  
+  get '/shops/genre/:genre', to: 'shops#genre', as: 'shop_genre'
   resources :shops
   
   resources :menus, only: [:create, :destroy, :edit]

@@ -33,7 +33,7 @@ class ShopsController < ApplicationController
 
   def update
     @shop = current_user.shops.find(params[:id])
-    if @shop.update(shop_params)
+    if @shop.update(shop_update_params)
       flash[:success] = 'お店情報は正常に更新されました。'
       redirect_to shop_path
     else
@@ -48,6 +48,10 @@ class ShopsController < ApplicationController
     flash[:success] = '投稿を削除しました。'
     redirect_to shops_path
   end
+  
+  def genre
+    @genres = Shop.where(genre: params[:genre])
+  end
 
   private
   
@@ -60,6 +64,17 @@ class ShopsController < ApplicationController
       ],
     )
   end
+  
+def shop_update_params
+  params.require(:shop).permit(:name, :address, :review, :area, :genre, :img, menus_attributes: [
+                                 :id,
+                                 :_destroy,
+                                 :menu,
+                                 :price,
+                                 :img,
+                               ],
+                              )
+end
   
   def correct_user
     @shop = current_user.shops.find_by(id: params[:id])

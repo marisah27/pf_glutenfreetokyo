@@ -3,11 +3,13 @@
 <h4>料理ジャンルから探す</h4>
 
 <div class="genre">
-  <div class="img_wrap"><a href="#"><%= image_tag 'Italian1.png' , :size => '215x200' %></a></div> 
-  <div class="img_wrap"><a href="#"><%= image_tag 'washoku2.png' , :size => '215x200' %></a></div>
-  <div class="img_wrap"><a href="#"><%= image_tag 'ethnic3.png' , :size => '215x200' %></a></div>
-  <div class="img_wrap"><a href="#"><%= image_tag 'meet4.png' , :size => '215x200' %></a></div>
- <div class="img_wrap"><a href="#"><%= image_tag 'cafe5.png' , :size => '215x200' %></a></div>
+  <div class="img_wrap"><a href="/shops/genre/italian"><%= image_tag 'Italian1.png' , :size => '215x200' %></a></div> 
+  <div class="img_wrap"><a href="/shops/genre/washoku"><%= image_tag 'washoku2.png' , :size => '215x200' %></a></div>
+  <div class="img_wrap"><a href="/shops/genre/ethnic"><%= image_tag 'ethnic3.png' , :size => '215x200' %></a></div>
+  <div class="img_wrap"><a href="/shops/genre/meet"><%= image_tag 'meet4.png' , :size => '215x200' %></a></div>
+  <div class="img_wrap"><a href="/shops/genre/cafe"><%= image_tag 'cafe5.png' , :size => '215x200' %></a></div>
 </div>
+
+
 
 <h5><%= link_to 'お店の一覧', shops_path %></h5>
