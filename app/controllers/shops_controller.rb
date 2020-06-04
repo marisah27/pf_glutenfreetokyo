@@ -3,7 +3,7 @@ class ShopsController < ApplicationController
   before_action :correct_user, only: [:edit,:destroy]
   
   def index
-    @shops = Shop.all.order(id: :desc).page(params[:page])
+    @shops = Shop.all.order(id: :desc).page(params[:page]).per(10)
   end
 
   def show
@@ -50,7 +50,7 @@ class ShopsController < ApplicationController
   end
   
   def genre
-    @genres = Shop.where(genre: params[:genre]).order(id: :desc).page(params[:page])
+    @genres = Shop.where(genre: params[:genre]).order(id: :desc).page(params[:page]).per(10)
   end
 
   private

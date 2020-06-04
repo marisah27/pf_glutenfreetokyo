@@ -14,6 +14,4 @@ Rails.application.routes.draw do
   get '/shops/genre/:genre', to: 'shops#genre', as: 'shop_genre'
   resources :shops
   
-  resources :menus, only: [:create, :destroy, :edit]
-  
 end
