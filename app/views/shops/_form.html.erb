@@ -15,7 +15,7 @@
       </div>
       
       <div class="field">
-        <%= f.label :area,'エリア選択／choose area' %> </br>
+        <%= f.label :area,'エリア選択／Choose area' %> </br>
         <%= f.label :"銀座" %>
         <%= f.radio_button :area, :ginza %>
         <%= f.label :"新橋・汐留" %>
@@ -31,12 +31,12 @@
      </div>
      
      <div class="form-group">
-       <%= f.label :画像 %><br />
+       <%= f.label :"画像／Restaurant images"%><br />
        <%= f.file_field :img, class: "image" %>
      </div>
     
      <div class="field">
-        <%= f.label :genre,'ジャンル選択／choose genre' %> </br>
+        <%= f.label :genre,'ジャンル選択／Choose genre' %> </br>
         <%= f.label :"イタリアン" %>
         <%= f.radio_button :genre, :italian %>
         <%= f.label :"和食" %>
@@ -50,7 +50,7 @@
      </div>
      
       <div class="form-group">
-        グルテンフリーメニュー/金額
+        グルテンフリーメニュー&金額／GlutenfreeMenu & Price
         <%= f.fields_for :menus do |m| %>
         <div class="row">
           <div class="col-sm-8">
@@ -65,12 +65,12 @@
         <!--後で追加：複数入力箇所追加・price・img-->
      
      <div class="form-group">
-        <%= f.label :review, '口コミ／review' %>
+        <%= f.label :review, '口コミ／Write a Review' %>
         <%= f.text_area :review, class: 'form-control', rows: 5 %>
      </div>
         
      
-      <%= f.submit '投稿', class: 'btn btn-secondary btn-block' %>
+      <%= f.submit '投稿／Post', class: 'btn btn-secondary btn-block' %>
   <% end %>
     
   </div>

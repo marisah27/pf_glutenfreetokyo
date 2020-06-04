@@ -1,12 +1,11 @@
-<div class="text-left">
-  <h3>メールアドレスで登録</h3>
-</div>
+<h3>メールアドレスで登録</h3>
 
 <div class="row">
+  
   <div class="col-sm-6 ">
 
     <%= form_with(model: @user, local: true) do |f| %>
-      <%= render 'layouts/error_messages', model: f.object %>
+    <%= render 'layouts/error_messages', model: f.object %>
       
       <div class="form-group">
         <%= f.label :name, 'Name' %>
@@ -32,5 +31,12 @@
     <% end %>
     
     <p>Already user? <%= link_to 'Log in here!', login_path %></p>
-  </div>
+   </div>
+  
+    <div class="col-md-6">
+    <%= image_tag 'sighup_img.png',:size =>'550x570' %>
+    </div>
+  
+</div>
+
 </div>
