@@ -1,9 +1,9 @@
 class ShopsController < ApplicationController
-  before_action :require_user_logged_in
+  before_action :require_user_logged_in, only: [:edit,:destroy, :create]
   before_action :correct_user, only: [:edit,:destroy]
   
   def index
-    @shops = current_user.shops.order(id: :desc).page(params[:page])
+    @shops = Shop.all.order(id: :desc).page(params[:page])
   end
 
   def show
@@ -50,7 +50,7 @@ class ShopsController < ApplicationController
   end
   
   def genre
-    @genres = Shop.where(genre: params[:genre])
+    @genres = Shop.where(genre: params[:genre]).order(id: :desc).page(params[:page])
   end
 
   private
