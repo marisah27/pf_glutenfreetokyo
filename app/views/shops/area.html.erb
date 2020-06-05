@@ -20,7 +20,7 @@
         <%= link_to 'メニューなどお店情報詳細はこちら', p ,class: 'btn btn-info'%>
         
         <% if current_user == p.user %>
-        <%= link_to '編集', edit_shop_path(shop),class: 'btn btn-secondary' %>
+        <%= link_to '編集', edit_shop_path(p),class: 'btn btn-secondary' %>
         <% end %>
       </div>
       
