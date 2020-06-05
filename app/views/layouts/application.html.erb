@@ -20,15 +20,20 @@
 </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
 
-    <div class="container">
-      <%= render 'layouts/flash_messages' %>
+    <div id="wrapper">
+      
+      <%= render 'layouts/navbar' %>
+      
+      <main>
+       <div class="container">
+        <%= render 'layouts/flash_messages' %>
+        <%= yield %>
+       </div>
+      </main>
+      
+      <%= render 'layouts/footer' %>
 
-      <%= yield %>
-    </div>
-    
-    <%= render 'layouts/footer' %>
-    
   </body>
+  
 </html>
