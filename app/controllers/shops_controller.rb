@@ -8,6 +8,7 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
+  
   end
   
   def new
@@ -51,6 +52,10 @@ class ShopsController < ApplicationController
   
   def genre
     @genres = Shop.where(genre: params[:genre]).order(id: :desc).page(params[:page]).per(10)
+  end
+
+  def area
+    @areas = Shop.where(area: params[:area]).order(id: :desc).page(params[:page]).per(10)
   end
 
   private

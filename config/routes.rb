@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'about', to: 'abouts#index'
   
   get '/shops/genre/:genre', to: 'shops#genre', as: 'shop_genre'
+  get '/shops/area/:area', to: 'shops#area', as: 'shop_area'
   resources :shops
   
 end

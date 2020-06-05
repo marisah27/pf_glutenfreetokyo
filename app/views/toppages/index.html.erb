@@ -12,4 +12,19 @@
 </div>
 
 
+<h5><i class="far fa-paper-plane"></i>  レストランのエリアから探す</h5>
+<p>Where do you enjoy your meal?</p>
+
+<div class="area">
+  <a class="btn btn-outline-secondary btn-lg" href="/shops/area/ginza" role="button">銀座</a>
+  <a class="btn btn-outline-secondary btn-lg" href="/shops/area/sinbashi" role="button">新橋・汐留</a>
+  <a class="btn btn-outline-secondary btn-lg" href="/shops/area/shibuya" role="button">渋谷</a>
+  <a class="btn btn-outline-secondary btn-lg" href="/shops/area/shinjuku" role="button">新宿</a>
+  <a class="btn btn-outline-secondary btn-lg" href="/shops/area/ikebukuro" role="button">池袋</a>
+  <a class="btn btn-outline-secondary btn-lg" href="/shops/area/others" role="button">その他</a>
+</div>
+
+
 <h5><i class="far fa-paper-plane"></i>  <%= link_to 'お店の一覧／All list of restaurant', shops_path %></h5>
+
+<span class="badge badge-secondary"><%= @count_shops %></span>

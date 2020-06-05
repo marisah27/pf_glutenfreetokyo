@@ -1,0 +1,36 @@
+
+<ul class="list-unstyled">
+  <% @areas&.each do |p| %>
+  <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #b0c4de; border-radius: 10px;">
+    <h2 class="mt-0"><%= link_to p.name, p%></h2>
+
+    <li class="media mb-3">
+        <p style="margin-right: 50px; margin-left: 30px">
+        <%= image_tag p.img.url,:size =>'230x230' if p.img?%>
+        </p>
+       <div class="media-body">
+         <div>
+           お店の住所：<%= p.address %>
+         </div>
+         <div>
+           口コミ情報：<%= p.review%>
+         </div>
+      <p>お店のジャンル：<%= p.genre %></p>
+      <div style="margin-top: 30px; margin-bottom: 5px;">
+        <%= link_to 'メニューなどお店情報詳細はこちら', p ,class: 'btn btn-info'%>
+        
+        <% if current_user == p.user %>
+        <%= link_to '編集', edit_shop_path(shop),class: 'btn btn-secondary' %>
+        <% end %>
+      </div>
+      
+    </li>
+  </div>
+</ul>
+
+  <% end %>
+  
+  <%= paginate @areas %>
+
+
+  <h5><%= link_to 'トップページに戻る', root_url %></h5>
