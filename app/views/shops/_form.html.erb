@@ -5,7 +5,7 @@
     <%= render 'layouts/error_messages', model: f.object %>
     
       <div class="form-group">
-        <%= f.label :name, 'お店の名前／Name of restaurant' %>
+        <%= f.label :name, '*お店の名前／Name of restaurant' %>
         <%= f.text_field :name, class: 'form-control' %>
       </div>
 
@@ -14,44 +14,47 @@
          <%= f.text_field :address, class: 'form-control', :placeholder => "東京都"%>
       </div>
       
+      
+            
       <div class="field">
-        <%= f.label :area,'エリア選択／Choose area' %> </br>
-        <%= f.label :"銀座" %>
+        <%= f.label :area,'*エリア選択／Choose area' %> </br>
         <%= f.radio_button :area, :ginza %>
-        <%= f.label :"新橋・汐留" %>
+        <%= f.label :"銀座" %>&emsp;
         <%= f.radio_button :area, :sinbashi %>
-        <%= f.label :"渋谷" %>
+        <%= f.label :"新橋・汐留" %>&emsp;
         <%= f.radio_button :area, :shibuya %>
-        <%= f.label :"新宿" %>
+        <%= f.label :"渋谷" %>&emsp;
         <%= f.radio_button :area, :shinjuku %>
-        <%= f.label :"池袋" %>
-        <%= f.radio_button :area, :ikebukuro %>
-        <%= f.label :"その他" %>
+        <%= f.label :"新宿" %>&emsp;
+        <%= f.radio_button :area, :shinjuku %>
+        <%= f.label :"池袋" %>&emsp;
         <%= f.radio_button :area, :others %>
+        <%= f.label :"その他" %>&emsp;
      </div>
+     
      
      <div class="form-group">
        <%= f.label :"画像／Restaurant images"%><br />
        <%= f.file_field :img, class: "image" %>
-     </div>
-    
+     </div> 
+     
      <div class="field">
         <%= f.label :genre,'ジャンル選択／Choose genre' %> </br>
-        <%= f.label :"イタリアン" %>
         <%= f.radio_button :genre, :italian %>
-        <%= f.label :"和食" %>
+        <%= f.label :"イタリアン" %>&emsp;
         <%= f.radio_button :genre, :washoku %>
-        <%= f.label :"エスニック・アジア料理" %>
+        <%= f.label :"和食" %>&emsp;
         <%= f.radio_button :genre, :ethnic %>
-        <%= f.label :"肉料理" %>
+        <%= f.label :"エスニックアジア料理" %>&emsp;
         <%= f.radio_button :genre, :meet %>
-        <%= f.label :"カフェ" %>
+        <%= f.label :"肉料理" %>&emsp;
         <%= f.radio_button :genre, :cafe %>
+        <%= f.label :"カフェ" %>&emsp;
      </div>
-     
+
       <div class="form-group">
-        グルテンフリーメニュー&金額／GlutenfreeMenu & Price
-        <%= f.fields_for :menus do |m| %>
+        グルテンフリーメニュー／GlutenfreeMenu &emsp;&emsp;&emsp;&emsp; 金額／Price
+          <%= f.fields_for :menus do |m| %>
         <div class="row">
           <div class="col-sm-8">
             <%= m.text_field :menu, class: 'form-control' %>
@@ -60,17 +63,16 @@
             <%= m.text_field :price, class: 'form-control' %>
           </div>
         </div>
-        <% end %>
-     </div>
-     
+        <% end %></br>
+        
      <div class="form-group">
-        <%= f.label :review, '口コミ／Write a Review' %>
+        <%= f.label :review, '*口コミ／Write a Review' %>
         <%= f.text_area :review, class: 'form-control', rows: 5 %>
      </div>
         
      
       <%= f.submit '投稿／Post', class: 'btn btn-secondary btn-block' %>
-  <% end %>
+      
+     <% end %>
     
   </div>
-</div>

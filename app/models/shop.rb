@@ -9,7 +9,9 @@ class Shop < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
   validates :address, length: { maximum: 100 }
   validates :review, presence: true, length: { maximum: 300 }
-  
+  validates :genre, presence: true
+  validates :area, presence: true
+
   enum area: {
     ginza: 0,
     sinbashi: 1,
