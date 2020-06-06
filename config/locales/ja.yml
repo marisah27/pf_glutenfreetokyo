@@ -1,0 +1,16 @@
+ja:
+  enums:
+    shop:
+      area:
+        ginza: "銀座"
+        sinbashi: "新宿・汐留"
+        shibuya: "渋谷"
+        shinjuku: "渋谷"
+        ikebukuro: "池袋"
+        others: "その他"
+      genre: 
+        italian: "イタリアン"
+        washoku: "和食"
+        ethnic: "エスニックアジア料理"
+        meet: "肉料理"
+        cafe: "カフェ"

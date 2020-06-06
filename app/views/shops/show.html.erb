@@ -3,8 +3,8 @@
 <%= image_tag @shop.img.url,:size =>'230x230' if @shop.img?%>
 
 <p>お店の住所：<%= @shop.address%></p>
-<p>お店のエリア：<%= @shop.area%></p>
-<p>お店のジャンル：<%= @shop.genre%></p>
+<p>お店のエリア：<%= @shop.area_i18n %></p>
+<p>お店のジャンル：<%= @shop.genre_i18n %></p>
 
 <table class="table table-bordered">
   <tr>

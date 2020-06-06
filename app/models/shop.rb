@@ -18,7 +18,7 @@ class Shop < ApplicationRecord
     shibuya: 2,
     shinjuku: 3,
     ikebukuro: 4,
-    others: 5
+    Others: 5
   }
   
   enum genre: {

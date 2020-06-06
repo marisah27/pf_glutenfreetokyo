@@ -14,4 +14,5 @@ class ApplicationController < ActionController::Base
     @count_shops = user.shops.count
   end
   
+  
 end

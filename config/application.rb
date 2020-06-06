@@ -1,5 +1,6 @@
 require_relative 'boot'
 
+
 require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
@@ -20,6 +21,7 @@ Bundler.require(*Rails.groups)
 module Shops
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.i18n.default_locale = :ja
     config.load_defaults 5.2
 
     # Settings in config/environments/* take precedence over those specified here.

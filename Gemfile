@@ -63,3 +63,6 @@ gem 'cloudinary'
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'
 end
+
+gem 'rails-i18n', '~> 5.1' 
+gem 'enum_help' 
