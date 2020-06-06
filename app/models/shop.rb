@@ -1,7 +1,9 @@
 class Shop < ApplicationRecord
   belongs_to :user
   has_many :menus, dependent: :destroy
+  has_many :prices, dependent: :destroy
   accepts_nested_attributes_for :menus
+  accepts_nested_attributes_for :prices
   mount_uploader :img, ImgUploader
   
   validates :name, presence: true, length: { maximum: 50 }
